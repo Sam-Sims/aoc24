@@ -58,11 +58,11 @@ fn part2_improved(col1: &[i32], col2: &[i32]) {
 
 pub fn run(input: &str) {
     // a bit more verbose but allows you to preallocate memory in the vectors
-    let lines: Vec<&str> = input.lines().collect();
-    let mut col1: Vec<i32> = Vec::with_capacity(lines.len());
-    let mut col2: Vec<i32> = Vec::with_capacity(lines.len());
+    let line_count = input.lines().count();
+    let mut col1: Vec<i32> = Vec::with_capacity(line_count);
+    let mut col2: Vec<i32> = Vec::with_capacity(line_count);
 
-    for line in lines {
+    for line in input.lines() {
         let nums: Vec<i32> = line
             .split_whitespace()
             .map(|n| n.parse().unwrap())
