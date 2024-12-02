@@ -32,6 +32,7 @@ fn main() {
             let input = input.trim_end();
             let day_func = match day {
                 1 => aoc24::day01::run,
+                2 => aoc24::day02::run,
                 _ => unreachable!(),
             };
             day_func(input);
