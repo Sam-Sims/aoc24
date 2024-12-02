@@ -49,7 +49,8 @@ fn part2_improved(col1: &[i32], col2: &[i32]) {
     }
 
     // again making better use of iterator methods
-    let total_diff: i32 = col1.iter()
+    let total_diff: i32 = col1
+        .iter()
         .map(|num| num * col2_counts.get(num).unwrap_or(&0))
         .sum();
 
