@@ -32,15 +32,14 @@ fn part_two(input: &str) {
         for i in 0..nums.len() {
             let mut nums = nums.clone();
             nums.remove(i);
-            if nums.windows(2).all(|w| w[0] < w[1]) || nums.windows(2).all(|w| w[0] > w[1]) {
-                if nums
+            if (nums.windows(2).all(|w| w[0] < w[1]) || nums.windows(2).all(|w| w[0] > w[1]))
+                && nums
                     .windows(2)
                     .all(|w| w[0].abs_diff(w[1]) <= 3 && w[0].abs_diff(w[1]) >= 1)
-                {
-                    // if the clone does pass, we are safe and no need to process rest of the indexes
-                    safe += 1;
-                    break;
-                }
+            {
+                // if the clone does pass, we are safe and no need to process rest of the indexes
+                safe += 1;
+                break;
             }
         }
     }
