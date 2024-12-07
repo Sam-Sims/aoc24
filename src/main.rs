@@ -37,6 +37,7 @@ fn main() {
                 4 => aoc24::day04::run,
                 5 => aoc24::day05::run,
                 6 => aoc24::day06::run,
+                7 => aoc24::day07::run,
                 _ => unreachable!(),
             };
             day_func(input);
